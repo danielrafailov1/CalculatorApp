@@ -10,7 +10,15 @@ function clearDisplay() {
 
 function calculate() {
     try {
-        display.value = eval(display.value);
+        let newval = "";
+        for (let i = 0; i < display.value.length; i++) {
+            if (display.value[i] === 'x') {
+                newval += '*';
+            } else {
+                newval += display.value[i];
+            }
+        }
+        display.value = eval(newval);
     }
     catch(error){
         display.value = "Error";
